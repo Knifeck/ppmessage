@@ -11,6 +11,8 @@ from .ackmessagehandler import AckMessageHandler
 from .forwardmessagehandler import ForwardMessageHandler
 from .setdeviceinfohandler import SetDeviceInfoHandler
 
+from .getmessagehistoryhandler import GetMessageHistoryHandler
+
 from .ppcreateanonymoushandler import PPCreateAnonymousHandler
 from .ppcreateuserhandler import PPCreateUserHandler
 from .ppremoveuserhandler import PPRemoveUserHandler
@@ -35,6 +37,7 @@ from .ppgetappserviceuserlisthandler import PPGetAppServiceUserListHandler
 from .ppsendmessagehandler import PPSendMessageHandler
 from .ppgetuseruuidhandler import PPGetUserUUIDHandler
 from .ppgetuserinfohandler import PPGetUserInfoHandler
+from .ppgethistorymessagehandler import PPGetHistoryMessageHandler
 
 from .ppgetapporggrouplisthandler import PPGetAppOrgGroupListHandler
 from .ppgetorggroupdetailhandler import PPGetOrgGroupDetailHandler
@@ -114,6 +117,7 @@ from .ppgetamdqueuelength import PPGetAmdQueueLength
 
 from .ppgetusermatchedmethod import PPGetUserMatchedMethod
 from .ppgettargetservicemethod import PPGetTargetServiceMethod
+
 
 def getWebServiceHandlers():
     handler_list = []
@@ -234,5 +238,7 @@ def getWebServiceHandlers():
     handler_list.append((r"/PP_GET_TARGET_SERVICE_METHOD", PPGetTargetServiceMethod))
     handler_list.append((r"/PP_GET_USER_MATCHED_METHOD", PPGetUserMatchedMethod))
     
+    handler_list.append((r"/GET_MESSAGE_HISTORY", GetMessageHistoryHandler))
+    handler_list.append((r"/PP_GET_HISTORY_MESSAGE", PPGetHistoryMessageHandler))
     return handler_list
 
